@@ -1,8 +1,7 @@
 # To run the sample/test
-1. Create a new directory
-2. Download both `test_ssh.sh` and `Dockerfile` to that directory
-3. In that directory, run `sh ./test_ssh.sh`
-4. Expected to see `*** PASSED: SSH is setup correctly ***` printed
+1. Clone this repo, or just download `test_ssh.sh` and `Dockerfile` into a new local directory
+2. Run `sh ./test_ssh.sh`
+3. Expect to see "PASSED: SSH is setup correctly" printed
 
 # Requirements
 ## at image build
