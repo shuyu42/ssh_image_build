@@ -24,4 +24,4 @@ ENV OMPI_ALLOW_RUN_AS_ROOT=1
 # The plm_rsh_agent MCA parameter accepts a colon-delimited list of programs to search for in your path to use as the remote startup agent. The default value is ssh : rsh, meaning that it will look for ssh first, and if it doesn't find it, use rsh. You can change the value of this parameter as relevant to your environment, such as simply changing it to rsh or rsh : ssh if you have a mixture. The deprecated forms pls_rsh_agent and orte_rsh_agent will also work.
 
 # Define `CMD` to start SSHD listening listening at port specified in a env var
-ENTRYPOINT [ "sh", "-c", "if [ -z ${SSH_PORT} ] ; then echo '${SSH_PORT} not defined' ; else /usr/sbin/sshd -Dp ${SSH_PORT} ; fi" ]
+ENTRYPOINT [ "sh", "-c", "if [ -z ${SSH_PORT} ] ; then echo '${SSH_PORT} not defined' && sleep infinity ; else /usr/sbin/sshd -Dp ${SSH_PORT} ; fi" ]
