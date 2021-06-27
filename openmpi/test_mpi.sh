@@ -19,9 +19,10 @@ docker run -d \
 
 docker exec ${container_main} mpirun -v --allow-run-as-root --hostfile /main/hostfile \
     -N 2 \
+    --wdir /main \
     -mca plm_rsh_agent /azureml-envs/tensorflow-2.4/bin/python \
     -mca plm_rsh_args /main/agent.py \
-    /azureml-envs/tensorflow-2.4/bin/python /main/train.py ${output}
+    /azureml-envs/tensorflow-2.4/bin/python train.py ${output}
 
 
 echo "** Checking main ${output} **"
